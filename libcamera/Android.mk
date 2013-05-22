@@ -1,6 +1,8 @@
-# omap4 has its own native camera implementation, see
+# Exynos and omap4 have their own native camera implementations, see
 # hardware/ti/omap4xxx
+# hardware/samsung_slsi/exynos5/libcamera2
 ifneq ($(TARGET_BOARD_PLATFORM),omap4)
+ifneq ($(TARGET_BOARD_PLATFORM),exynos5)
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= \
@@ -38,4 +40,5 @@ LOCAL_MODULE:= camera.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS:= optional
 
 include $(BUILD_SHARED_LIBRARY)
+endif
 endif
